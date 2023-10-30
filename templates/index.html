@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Prediction</title>
+</head>
+<body style="background-color: black; color: orange;">
+    <h1>Sales Prediction</h1>
+    <form method="POST" action="/predict">
+        <label for="country">Enter the country code:</label>
+        <input type="number" name="country" value="0"><br>
+
+        <label for="store">Enter the store code:</label>
+        <input type="number" name="store" value="0"><br>
+
+        <label for="product">Enter the product code:</label>
+        <input type="number" name="product" value="0"><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    <h2>Prediction Result</h2>
+    <div id="prediction-result"></div>
+
+    <button onclick="useSampleData()">Use Sample Data</button>
+
+    <script>
+        function useSampleData() {
+            document.getElementsByName("country")[0].value = 0;
+            document.getElementsByName("store")[0].value = 0;
+            document.getElementsByName("product")[0].value = 0;
+            document.querySelector('form').submit();
+        }
+    </script>
+</body>
+</html>
